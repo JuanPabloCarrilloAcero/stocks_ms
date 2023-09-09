@@ -8,5 +8,5 @@ export function getDatabaseUrl(): string {
     let username = process.env.DATABASE_USER;
     let password = process.env.DATABASE_PASSWORD;
     let database = process.env.DATABASE;
-    return url.replace('<username>', username).replace('<password>', password).replace('<database>', database);
+    return url.replace('<user>', username).replace('<password>', password).replace('<database>', database);
 }

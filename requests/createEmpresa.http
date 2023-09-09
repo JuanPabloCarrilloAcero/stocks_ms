@@ -1,0 +1,13 @@
+POST http://localhost:3000/create/empresa/AAPL
+
+# Create empresa,
+# should return message with
+#  - success message
+#  - data of the company created and historical data created
+
+/*
+Create empresa,
+should return message with
+ - success message
+ - data of the company created and historical data created
+*/

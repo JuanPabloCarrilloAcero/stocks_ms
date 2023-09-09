@@ -1,9 +1,13 @@
 import {NestFactory} from '@nestjs/core';
-import {AppModule} from './app.module';
+import {AppModule} from './module/app.module';
 import * as dotenv from 'dotenv';
+import {CustomExceptionFilter} from "./exception/custom-exception.filter";
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
+
+    app.useGlobalFilters(new CustomExceptionFilter());
+
     await app.listen(3000);
 }
 
