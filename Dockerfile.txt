@@ -1,7 +1,7 @@
 Build the Docker Image
 
-RUN "docker build -t my-nest-app ."
+RUN "docker build -t stocks_ms ."
 
 Run the Docker Container
 
-RUN "docker run -d -p 3000:3000 my-nest-app"
+RUN "docker run --name stocks_ms --network mynetwork  -d -p 3000:3000 stocks_ms"
