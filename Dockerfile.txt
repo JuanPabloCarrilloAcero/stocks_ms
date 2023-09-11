@@ -1,0 +1,7 @@
+Build the Docker Image
+
+RUN "docker build -t my-nest-app ."
+
+Run the Docker Container
+
+RUN "docker run -d -p 3000:3000 my-nest-app"
