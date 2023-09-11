@@ -10,12 +10,12 @@ export class ScheduleProvider implements OnModuleInit {
 
     onModuleInit() {
 
-        /*cron.schedule('0 1 * * *', () => {
-            this.scheduleService.performScheduledTask().then(r => console.log(r.message));
-        });*/
-
-        cron.schedule('*/10 * * * * *', () => {
+        cron.schedule('0 23 * * *', () => {
             this.scheduleService.performScheduledTask().then(r => console.log(r.message));
         });
+
+        // cron.schedule('*/10 * * * * *', () => {
+        //     this.scheduleService.performScheduledTask().then(r => console.log(r.message));
+        // });
     }
 }

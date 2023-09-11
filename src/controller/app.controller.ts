@@ -30,4 +30,8 @@ export class AppController {
         return this.appService.getHistoric(ticker);
     }
 
+    @Get('/get/empresas') getEmpresas(): Promise<CustomResponse> {
+        return this.appService.getEmpresas();
+    }
+
 }

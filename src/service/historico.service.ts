@@ -82,27 +82,27 @@ export class HistoricoService {
             let historicData: any;
 
             let today = new Date();
-            today.setHours(0, 0, 0, 0);
+            today.setUTCHours(0, 0, 0, 0);
             // TODO: SET TIMEZONE to UTC
 
             await this.hasByDate(empresa._id, today);
 
             try {
-                //historicData = await this.externalApiService.bringDataFromAPI(ticker, 'TIME_SERIES_DAILY', '&outputsize=compact');
+                historicData = await this.externalApiService.bringDataFromAPI(ticker, 'TIME_SERIES_DAILY', '&outputsize=compact');
             } catch (e) {
                 throw {message: 'error bringing data from API, ' + e.message, data: null};
             }
 
-            //let historicDataToday: HistoricoInterface = this.castAPIToday(historicData, empresa);
+            let historicDataToday: HistoricoInterface = this.castAPIToday(historicData, empresa);
 
-            let historicDataToday: HistoricoInterface = {
+            /*let historicDataToday: HistoricoInterface = {
                 relatedDate: today,
                 open: 1,
                 high: 1,
                 low: 1,
                 close: 1,
                 empresaTicker: empresa._id
-            }
+            }*/
 
             await this.saveDatabase(historicDataToday);
 
@@ -153,7 +153,7 @@ export class HistoricoService {
         if(historicDataArrayFiltered.length === 1){
             return historicDataArrayFiltered[0];
         } else {
-            throw {message: 'error casting API data from today', data: null};
+            throw {message: 'no data found for today', data: null};
         }
 
     }

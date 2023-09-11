@@ -1,0 +1,6 @@
+GET http://localhost:3000/get/empresas
+
+# Get empresa,
+# should return message with
+# - success message
+# - data of all companies

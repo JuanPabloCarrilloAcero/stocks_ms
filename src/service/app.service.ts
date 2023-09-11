@@ -97,4 +97,19 @@ export class AppService {
 
     }
 
+    async getEmpresas(): Promise<CustomResponse> {
+
+            try {
+
+                let empresas: Empresa[];
+
+                await this.empresaService.getAll().then((response) => empresas = response.data);
+
+                return {message: 'Empresas retrieved successfully!', data: {empresas}};
+
+            } catch (e){
+                throw new CustomException('Error retrieving empresas, ' + e.message, HttpStatus.BAD_REQUEST);
+            }
+    }
+
 }
