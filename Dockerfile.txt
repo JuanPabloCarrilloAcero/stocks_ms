@@ -4,4 +4,4 @@ RUN "docker build -t stocks_ms ."
 
 Run the Docker Container
 
-RUN "docker run --name stocks_ms --network mynetwork  -d -p 3000:3000 stocks_ms"
+RUN "docker run --name stocks_ms --network mynetwork  -d -p 8000:8000 stocks_ms"

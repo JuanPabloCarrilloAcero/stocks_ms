@@ -1,4 +1,4 @@
-GET http://localhost:3000/get/empresa/AAPL
+GET http://localhost:8000/get/empresa/AAPL
 
 # Get empresa,
 # should return message with

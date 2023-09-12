@@ -8,7 +8,7 @@ async function bootstrap() {
 
     app.useGlobalFilters(new CustomExceptionFilter());
 
-    await app.listen(3000);
+    await app.listen(8000);
 }
 
-bootstrap().then(() => console.log('NestJS server running on port 3000'));
+bootstrap().then(() => console.log('NestJS server running on port 8000'));

@@ -1,1 +1,1 @@
-GET http://localhost:3000/get/historic/AAPL
+GET http://localhost:8000/get/historic/AAPL
